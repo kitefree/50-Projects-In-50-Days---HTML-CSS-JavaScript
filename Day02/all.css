@@ -13,34 +13,66 @@ body{
     overflow: hidden;
     margin: 0;    
 }
-.container{
-    display: flex;
-    width: 90vw;    
-    justify-content:space-around;
-    position: relative;
-    font-size: 1.5rem;
-    width: 90%;
-    align-items: center;
+.container{    
+    font-size: 1rem;     
     text-align: center;
 
-}
-.circle{    
-    border:3px solid #204969;
-    border-radius: 20px;
-    width: 40px;
-    height: 40px;
-  
+ }
+ .progress-container{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom:30px;
+    max-width: 100%;
+    width:450px;
 }
 
-.circle.active{    
-    background-color: #204969;
-    color:white;
+
+.progress-1{
+    border:4px solid #dadada;
+    position:absolute;
+    top:50%;
+    width: 100%;    
+    z-index: -1;
+    transform: translateY(-50%);/*確認用法*/
+    transition: 0.4s ease;
+}
+.progress-container::before{
+    content:'';
+    background-color: #dadada;
+    height: 4px;
+    top:50%;
+    left:0;
+    transform: translateY(-50%);
+    position:absolute;
+    width: 100%;
+    z-index: -1;
+    
 }
 
 .progress{
-    border:3px solid #dadada;
-    position:absolute;
+    background-color: #3498db;
+    height: 4px;
     top:50%;
-    width: 75%;    
+    left:0;
+    transform: translateY(-50%);
+    position:absolute;
+    width: 0%;
+    transition: 0.4s ease;
     z-index: -1;
+}
+.circle{
+    border:3px solid  #dadada;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content:center;
+    transition: 0.4 ease;
+}
+.circle.active{
+    border-color:#3498db;
 }
